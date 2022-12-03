@@ -25,13 +25,13 @@ refs.form.addEventListener('submit', (e) => {
 	const position = refs.amountInput.value
 	let step = Number(refs.stepInput.value);
 	for (let i = 1; i <= position; i++) {
-			createPromise(i,delay)
-			.then(({ position, delay }) => {
-				Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-			})
-			.catch(({ position, delay }) => {
-				Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-			});
-  	  delay = delay + step;	
+		createPromise(i,delay)
+		.then(({ position, delay }) => {
+		Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+		})
+		.catch(({ position, delay }) => {
+		Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+		});
+		delay = delay + step;	
 	}
 })
